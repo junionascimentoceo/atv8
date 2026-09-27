@@ -42,3 +42,10 @@ O projeto utiliza os seguintes métodos:
 * JSON
 * GitHub
 * GitHub Pages
+### Console
+
+![Print do Console](print-console.png)
+
+### Página
+
+![Print da página](print-pagina.png)
