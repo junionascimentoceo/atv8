@@ -58,6 +58,8 @@ const catalogo = [
         assistido: false
     }
 ];
+
+
 // ==========================================
 // B.2 - ACESSO E LEITURA DOS DADOS
 // ==========================================
@@ -72,10 +74,15 @@ console.log("Ano do último item:", catalogo[catalogo.length - 1].ano);
 
 // Segundo gênero do terceiro item
 if (catalogo[2].generos.length > 1) {
-    console.log("Segundo gênero do terceiro item:", catalogo[2].generos[1]);
+    console.log(
+        "Segundo gênero do terceiro item:",
+        catalogo[2].generos[1]
+    );
 } else {
     console.log("O terceiro item possui apenas um gênero.");
 }
+
+
 // ==========================================
 // B.3 A - LISTAGEM COM FOREACH
 // ==========================================
@@ -85,6 +92,8 @@ console.log("=== LISTA DE FILMES E SÉRIES ===");
 catalogo.forEach((item) => {
     console.log(`- [${item.tipo}] ${item.titulo} (${item.ano})`);
 });
+
+
 // ==========================================
 // B.3 B - TRANSFORMAÇÃO COM MAP
 // ==========================================
@@ -95,8 +104,23 @@ const titulosEmCaixaAlta = catalogo.map((item) => {
 
 console.log("=== TÍTULOS EM CAIXA ALTA ===");
 console.log(titulosEmCaixaAlta);
+
+
 // ==========================================
-// B.3 C - BUSCA COM FIND
+// B.3 C - SELEÇÃO COM FILTER
+// ==========================================
+
+const naoAssistidos = catalogo.filter((item) => {
+    return item.assistido === false;
+});
+
+console.log("=== ITENS NÃO ASSISTIDOS ===");
+console.log(naoAssistidos);
+console.log("Quantidade de não assistidos:", naoAssistidos.length);
+
+
+// ==========================================
+// B.3 D - BUSCA COM FIND
 // ==========================================
 
 const itemNotaAlta = catalogo.find((item) => {
@@ -111,8 +135,10 @@ if (itemNotaAlta) {
 } else {
     console.log("Nenhum item possui nota igual ou superior a 9.");
 }
+
+
 // ==========================================
-// B.3 D - CÁLCULO DAS MÉDIAS COM REDUCE
+// B.3 E - CÁLCULO DAS MÉDIAS COM REDUCE
 // ==========================================
 
 // Soma de todas as notas
@@ -144,8 +170,10 @@ const mediaAssistidos = assistidos.length > 0
 console.log("=== MÉDIAS DAS NOTAS ===");
 console.log("Média geral:", mediaGeral.toFixed(2));
 console.log("Média dos assistidos:", mediaAssistidos.toFixed(2));
+
+
 // ==========================================
-// B.3 E - VERIFICAÇÕES COM SOME E EVERY
+// B.3 F - VERIFICAÇÕES COM SOME E EVERY
 // ==========================================
 
 // Verifica se existe algum item lançado antes do ano 2000
@@ -160,7 +188,12 @@ const todosTemGenero = catalogo.every((item) => {
 
 console.log("=== VERIFICAÇÕES ===");
 console.log("Existe item com ano < 2000:", existeAntigo);
-console.log("Todos os itens têm pelo menos 1 gênero:", todosTemGenero);
+console.log(
+    "Todos os itens têm pelo menos 1 gênero:",
+    todosTemGenero
+);
+
+
 // ==========================================
 // B.4 - RESUMO NA PÁGINA (DOM)
 // ==========================================
@@ -174,16 +207,17 @@ const quantidadeFilmes = catalogo.filter((item) => {
 const quantidadeSeries = catalogo.filter((item) => {
     return item.tipo === "serie";
 }).length;
-const ranking = [...catalogo]
-    .sort((a, b) => b.nota - a.nota)
-    .slice(0, 3);
-// Criação do ranking com as 3 maiores notas
+
+
+// Ranking com as 3 maiores notas
 const ranking = [...catalogo]
     .sort((a, b) => b.nota - a.nota)
     .slice(0, 3);
 
+
 // Seleciona a div #output do HTML
 const output = document.getElementById("output");
+
 
 // Mostra o resumo na página
 output.innerHTML = `
@@ -207,4 +241,3 @@ output.innerHTML = `
         }).join("")}
     </ol>
 `;
-
