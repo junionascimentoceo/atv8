@@ -76,3 +76,12 @@ if (catalogo[2].generos.length > 1) {
 } else {
     console.log("O terceiro item possui apenas um gênero.");
 }
+// ==========================================
+// B.3 A - LISTAGEM COM FOREACH
+// ==========================================
+
+console.log("=== LISTA DE FILMES E SÉRIES ===");
+
+catalogo.forEach((item) => {
+    console.log(`- [${item.tipo}] ${item.titulo} (${item.ano})`);
+});
