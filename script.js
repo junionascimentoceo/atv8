@@ -111,3 +111,36 @@ if (itemNotaAlta) {
 } else {
     console.log("Nenhum item possui nota igual ou superior a 9.");
 }
+// ==========================================
+// B.3 D - CÁLCULO DAS MÉDIAS COM REDUCE
+// ==========================================
+
+// Soma de todas as notas
+const somaNotas = catalogo.reduce((acumulador, item) => {
+    return acumulador + item.nota;
+}, 0);
+
+// Média geral
+const mediaGeral = somaNotas / catalogo.length;
+
+
+// Filtra apenas os itens assistidos
+const assistidos = catalogo.filter((item) => {
+    return item.assistido === true;
+});
+
+// Soma das notas dos itens assistidos
+const somaNotasAssistidos = assistidos.reduce((acumulador, item) => {
+    return acumulador + item.nota;
+}, 0);
+
+// Média dos itens assistidos
+const mediaAssistidos = assistidos.length > 0
+    ? somaNotasAssistidos / assistidos.length
+    : 0;
+
+
+// Exibição dos resultados
+console.log("=== MÉDIAS DAS NOTAS ===");
+console.log("Média geral:", mediaGeral.toFixed(2));
+console.log("Média dos assistidos:", mediaAssistidos.toFixed(2));
