@@ -161,4 +161,50 @@ const todosTemGenero = catalogo.every((item) => {
 console.log("=== VERIFICAÇÕES ===");
 console.log("Existe item com ano < 2000:", existeAntigo);
 console.log("Todos os itens têm pelo menos 1 gênero:", todosTemGenero);
+// ==========================================
+// B.4 - RESUMO NA PÁGINA (DOM)
+// ==========================================
+
+// Quantidade de filmes
+const quantidadeFilmes = catalogo.filter((item) => {
+    return item.tipo === "filme";
+}).length;
+
+// Quantidade de séries
+const quantidadeSeries = catalogo.filter((item) => {
+    return item.tipo === "serie";
+}).length;
+const ranking = [...catalogo]
+    .sort((a, b) => b.nota - a.nota)
+    .slice(0, 3);
+// Criação do ranking com as 3 maiores notas
+const ranking = [...catalogo]
+    .sort((a, b) => b.nota - a.nota)
+    .slice(0, 3);
+
+// Seleciona a div #output do HTML
+const output = document.getElementById("output");
+
+// Mostra o resumo na página
+output.innerHTML = `
+    <h2>Resumo do Catálogo</h2>
+
+    <p><strong>Total de itens:</strong> ${catalogo.length}</p>
+
+    <p><strong>Filmes:</strong> ${quantidadeFilmes}</p>
+
+    <p><strong>Séries:</strong> ${quantidadeSeries}</p>
+
+    <p><strong>Não assistidos:</strong> ${naoAssistidos.length}</p>
+
+    <p><strong>Média geral:</strong> ${mediaGeral.toFixed(2)}</p>
+
+    <h3>Top 3 notas</h3>
+
+    <ol>
+        ${ranking.map((item) => {
+            return `<li>${item.titulo} — ${item.nota.toFixed(1)}</li>`;
+        }).join("")}
+    </ol>
+`;
 
