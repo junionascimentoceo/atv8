@@ -85,3 +85,13 @@ console.log("=== LISTA DE FILMES E SÉRIES ===");
 catalogo.forEach((item) => {
     console.log(`- [${item.tipo}] ${item.titulo} (${item.ano})`);
 });
+// ==========================================
+// B.3 B - TRANSFORMAÇÃO COM MAP
+// ==========================================
+
+const titulosEmCaixaAlta = catalogo.map((item) => {
+    return item.titulo.toUpperCase();
+});
+
+console.log("=== TÍTULOS EM CAIXA ALTA ===");
+console.log(titulosEmCaixaAlta);
