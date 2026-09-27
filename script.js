@@ -95,3 +95,19 @@ const titulosEmCaixaAlta = catalogo.map((item) => {
 
 console.log("=== TÍTULOS EM CAIXA ALTA ===");
 console.log(titulosEmCaixaAlta);
+// ==========================================
+// B.3 C - BUSCA COM FIND
+// ==========================================
+
+const itemNotaAlta = catalogo.find((item) => {
+    return item.nota >= 9;
+});
+
+console.log("=== PRIMEIRO ITEM COM NOTA >= 9 ===");
+
+if (itemNotaAlta) {
+    console.log("Título:", itemNotaAlta.titulo);
+    console.log("Nota:", itemNotaAlta.nota);
+} else {
+    console.log("Nenhum item possui nota igual ou superior a 9.");
+}
