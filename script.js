@@ -144,3 +144,21 @@ const mediaAssistidos = assistidos.length > 0
 console.log("=== MÉDIAS DAS NOTAS ===");
 console.log("Média geral:", mediaGeral.toFixed(2));
 console.log("Média dos assistidos:", mediaAssistidos.toFixed(2));
+// ==========================================
+// B.3 E - VERIFICAÇÕES COM SOME E EVERY
+// ==========================================
+
+// Verifica se existe algum item lançado antes do ano 2000
+const existeAntigo = catalogo.some((item) => {
+    return item.ano < 2000;
+});
+
+// Verifica se todos os itens possuem pelo menos um gênero
+const todosTemGenero = catalogo.every((item) => {
+    return item.generos.length >= 1;
+});
+
+console.log("=== VERIFICAÇÕES ===");
+console.log("Existe item com ano < 2000:", existeAntigo);
+console.log("Todos os itens têm pelo menos 1 gênero:", todosTemGenero);
+
