@@ -49,3 +49,7 @@ O projeto utiliza os seguintes métodos:
 ### Página
 
 ![Print da página](print-pagina.png)
+
+## Entrega
+
+Atividade desenvolvida na branch `junio`.
