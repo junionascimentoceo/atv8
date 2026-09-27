@@ -58,3 +58,21 @@ const catalogo = [
         assistido: false
     }
 ];
+// ==========================================
+// B.2 - ACESSO E LEITURA DOS DADOS
+// ==========================================
+
+console.log(catalogo);
+
+// Título do primeiro item
+console.log("Primeiro título:", catalogo[0].titulo);
+
+// Ano do último item
+console.log("Ano do último item:", catalogo[catalogo.length - 1].ano);
+
+// Segundo gênero do terceiro item
+if (catalogo[2].generos.length > 1) {
+    console.log("Segundo gênero do terceiro item:", catalogo[2].generos[1]);
+} else {
+    console.log("O terceiro item possui apenas um gênero.");
+}
