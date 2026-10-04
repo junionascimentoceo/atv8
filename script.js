@@ -89,3 +89,138 @@ function formatPrice(preco) {
         currency: "BRL"
     });
 }
+function createProductCard(produto) {
+
+    const card = document.createElement("div");
+
+    card.classList.add("card");
+
+    card.setAttribute("data-id", produto.id);
+
+    card.style.padding = "16px";
+
+
+    const image = document.createElement("img");
+
+    image.setAttribute("src", produto.imagem);
+
+    image.setAttribute("alt", produto.nome);
+
+    image.classList.add("card-image");
+
+
+    const title = document.createElement("h2");
+
+    title.classList.add("card-title");
+
+    title.textContent = produto.nome;
+
+
+    const price = document.createElement("p");
+
+    price.textContent = formatPrice(produto.preco);
+
+
+    const category = document.createElement("p");
+
+    category.textContent = `Categoria: ${produto.categoria}`;
+
+
+    const detailsButton = document.createElement("button");
+
+    detailsButton.textContent = "Ver detalhes";
+
+    detailsButton.addEventListener("click", function () {
+        showProductDetails(produto);
+    });
+
+
+    const highlightButton = document.createElement("button");
+
+    highlightButton.textContent = "Destacar";
+
+    highlightButton.addEventListener("click", function () {
+
+        if (card.classList.contains("highlight")) {
+            card.classList.remove("highlight");
+        } else {
+            card.classList.add("highlight");
+        }
+
+    });
+
+
+    card.appendChild(image);
+
+    card.appendChild(title);
+
+    card.appendChild(price);
+
+    card.appendChild(category);
+
+    card.appendChild(detailsButton);
+
+    card.appendChild(highlightButton);
+
+
+    return card;
+}
+function renderProducts(produtos) {
+
+    productList.innerHTML = "";
+
+    produtos.forEach(function (produto) {
+
+        const card = createProductCard(produto);
+
+        productList.appendChild(card);
+
+    });
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(function (card) {
+
+        console.log(
+            "Card renderizado - data-id:",
+            card.getAttribute("data-id")
+        );
+
+    });
+}
+function renderCategories() {
+
+    categorySelect.innerHTML = "";
+
+    const optionTodas = document.createElement("option");
+
+    optionTodas.value = "Todas";
+
+    optionTodas.textContent = "Todas";
+
+    categorySelect.appendChild(optionTodas);
+
+
+    const categorias = [];
+
+    data.produtos.forEach(function (produto) {
+
+        if (!categorias.includes(produto.categoria)) {
+            categorias.push(produto.categoria);
+        }
+
+    });
+
+
+    categorias.forEach(function (categoria) {
+
+        const option = document.createElement("option");
+
+        option.value = categoria;
+
+        option.textContent = categoria;
+
+        categorySelect.appendChild(option);
+
+    });
+}
