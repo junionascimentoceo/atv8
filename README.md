@@ -1,55 +1,67 @@
-# Atividade Prática - Objetos e Arrays utilizando JSON
+# Atividade Prática - Funções e manipulação do DOM
 
-## Identificação
-
-**Nome:** Junio César Nascimento Pereira
+**Aluno:** Junio Nascimento
 **Matrícula:** 934209
 
-## Descrição
+## Sobre a atividade
 
-Mini catálogo de filmes e séries desenvolvido utilizando JavaScript, com manipulação de objetos e arrays e utilização de métodos iteradores.
+Nesta atividade foi desenvolvido um mini ecommerce utilizando HTML, CSS e JavaScript.
+
+O projeto apresenta uma lista de produtos em formato de cards e utiliza funções, manipulação do DOM e eventos para permitir a interação com os produtos.
 
 ## Funcionalidades
 
-O projeto utiliza os seguintes métodos:
-
-* `forEach()` — listagem dos filmes e séries;
-* `map()` — transformação dos títulos para letras maiúsculas;
-* `filter()` — seleção dos itens não assistidos;
-* `find()` — busca do primeiro item com nota igual ou superior a 9;
-* `reduce()` — cálculo das médias das notas;
-* `some()` — verificação de item lançado antes do ano 2000;
-* `every()` — verificação de itens que possuem pelo menos um gênero.
-
-## Resultados
-
-### Console
-
-*Print do Console mostrando a lista de títulos, médias, `some()` e `every()`.*
-
-> Inserir aqui o print do Console.
-
-### Página
-
-*Print da página mostrando o resumo do catálogo no `div#output`.*
-
-> Inserir aqui o print da página.
+* Exibição de 8 produtos;
+* Organização dos produtos por categorias;
+* Pesquisa de produtos por nome;
+* Filtro de produtos por categoria;
+* Renderização dinâmica dos cards;
+* Visualização dos detalhes de cada produto;
+* Destaque visual dos produtos;
+* Formatação dos preços em reais;
+* Uso de eventos JavaScript;
+* Manipulação dinâmica dos elementos HTML.
 
 ## Tecnologias utilizadas
 
 * HTML5
+* CSS3
 * JavaScript
-* JSON
-* GitHub
-* GitHub Pages
-### Console
 
-![Print do Console](print-console.png)
+## Conceitos utilizados
 
-### Página
+Durante o desenvolvimento foram utilizados:
 
-![Print da página](print-pagina.png)
+* `document.getElementById()`
+* `document.querySelector()`
+* `document.querySelectorAll()`
+* `document.createElement()`
+* `setAttribute()`
+* `classList.add()`
+* `classList.remove()`
+* `appendChild()`
+* `innerHTML`
+* `addEventListener()`
+* Funções JavaScript
+* Arrays e objetos
+* Métodos `forEach()`, `filter()` e `includes()`
 
-## Entrega
+## Estrutura do projeto
 
-Atividade desenvolvida na branch `junio`.
+```text
+atv8/
+├── index.html
+├── script.js
+├── styles.css
+├── README.md
+├── print-ecommerce.png
+└── print-console-dom.png
+```
+
+## Página do projeto
+
+A página apresenta os produtos em cards, com informações como nome, preço, categoria e botões para visualizar detalhes e destacar produtos.
+
+![Página do Mini Ecommerce](print-ecommerce.png)
+
+## Conso
