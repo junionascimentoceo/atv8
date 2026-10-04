@@ -74,3 +74,12 @@ const data = {
         }
     ]
 };
+const productList = document.getElementById("product-list");
+
+const productDetails = document.getElementById("product-details");
+
+const searchInput = document.querySelector("#search");
+
+const categorySelect = document.querySelector("#category");
+
+const renderButton = document.querySelector("#btnRender");
