@@ -83,3 +83,9 @@ const searchInput = document.querySelector("#search");
 const categorySelect = document.querySelector("#category");
 
 const renderButton = document.querySelector("#btnRender");
+function formatPrice(preco) {
+    return preco.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+}
