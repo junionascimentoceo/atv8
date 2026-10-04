@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mini Ecommerce</title>
 
     <link rel="stylesheet" href="styles.css">
@@ -10,7 +12,10 @@
 
 <body>
 
-    <h1>Mini Ecommerce</h1>
+    <header>
+        <h1>Mini Ecommerce</h1>
+        <p>Catálogo de produtos</p>
+    </header>
 
     <section id="controls">
 
@@ -32,13 +37,26 @@
 
     <main>
 
-        <div id="product-list"></div>
+        <section>
+            <h2>Produtos</h2>
 
-        <div id="product-details"></div>
+            <div id="product-list"></div>
+        </section>
+
+        <section id="details-section">
+
+            <h2>Detalhes do produto</h2>
+
+            <div id="product-details">
+                <p>Selecione um produto para visualizar os detalhes.</p>
+            </div>
+
+        </section>
 
     </main>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
